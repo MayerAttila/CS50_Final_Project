@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block title %}
+Quize
+{% endblock %}
+
+{% block main %}
+<form action="/quize" method="post">
+  {% if question %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="2"></th>
+          <h1>{{ question }}?</h1>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><button class="btn btn-primary" name="sumbited" value="{{ answers[0] }}">{{ answers[0] }}</button></td>
+          <td><button class="btn btn-primary" name="sumbited" value="{{ answers[1] }}">{{ answers[1] }}</button></td>
+        </tr>
+        <tr>
+          <td><button class="btn btn-primary" name="sumbited" value="{{ answers[2] }}">{{ answers[2] }}</button></td>
+          <td><button class="btn btn-primary" name="sumbited" value="{{ answers[3] }}">{{ answers[3] }}</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <img width="40%" src="{{ image }}">
+  {% else %}
+  <div class="card">
+    <div class="card-header">
+      <h1>How is the quize work?</h1>
+    </div>
+    <div class="card-body">
+      <p class="card-text">When you start the quize you will get a randomized question about a random film. Your task is to select the correct answer, u can submit your answer by clicking on it. Everytime you submit an answer your profile will update itself. Press start if you are ready!</p>
+    </div>
+  </div>
+  <button class="btn btn-primary" name="sumbited" value="Start">Start</button>
+  {% endif %}
+
+</form>
+{% endblock %}

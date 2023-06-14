@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block title %}
+profile
+{% endblock %}
+
+{% block main %}
+<form action="/profile">
+    <div style="font-size: 400%;">{{ name }}</div>
+    <div style="font-size: 250%;">answered questions: {{ questions }}</div>
+    <div style="font-size: 250%;">good answers: {{ gansw }}</div>
+    <div style="font-size: 250%;">accuracy: {{accuracy}}%</div>
+
+
+
+
+
+{% endblock %}
